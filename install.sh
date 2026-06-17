@@ -5,7 +5,7 @@ SKILLS_DIR="$HOME/.claude/skills"
 AGENTS_DIR="$HOME/.claude/agents"
 COMMANDS_DIR="$HOME/.claude/commands"
 
-SKILLS=(client-project-init supabase-logging supabase-drive-backup legal-pages-israel project-about-page)
+SKILLS=(client-project-init supabase-logging supabase-drive-backup legal-pages-israel project-about-page orchestration-rules)
 
 mkdir -p "$SKILLS_DIR" "$AGENTS_DIR" "$COMMANDS_DIR"
 

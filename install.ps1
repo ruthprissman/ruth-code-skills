@@ -4,7 +4,7 @@ $skillsDir   = "$env:USERPROFILE\.claude\skills"
 $agentsDir   = "$env:USERPROFILE\.claude\agents"
 $commandsDir = "$env:USERPROFILE\.claude\commands"
 
-$skills = @('client-project-init', 'supabase-logging', 'supabase-drive-backup', 'legal-pages-israel', 'project-about-page')
+$skills = @('client-project-init', 'supabase-logging', 'supabase-drive-backup', 'legal-pages-israel', 'project-about-page', 'orchestration-rules')
 
 New-Item -ItemType Directory -Force -Path $skillsDir   | Out-Null
 New-Item -ItemType Directory -Force -Path $agentsDir   | Out-Null
