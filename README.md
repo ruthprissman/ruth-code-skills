@@ -11,6 +11,10 @@ A collection of Claude Code skills, agents, and commands for building client pro
 | `supabase-drive-backup` | Daily automated backup to Google Drive (Excel + pg_dump) |
 | `legal-pages-israel` | Privacy Policy + Terms of Service for Israeli internal sites |
 | `project-about-page` | Public `/about` page for closed apps (Google OAuth + SEO) |
+| `orchestration-rules` | Always-active rules: prompt decomposition, parallel subagents, logging, accessibility, TypeScript, CHANGELOG |
+
+> `orchestration-rules` is loaded automatically on every project and every task.
+> It does not need to be invoked — it is always active.
 
 ## Agents
 
