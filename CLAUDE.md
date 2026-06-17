@@ -36,10 +36,19 @@ install.ps1     — Windows installer
 3. Add a row to the Skills table in README.md
 4. Install locally: `cp -r skills/new-skill-name ~/.claude/skills/`
 
+## Agents (current)
+
+| Agent | Role |
+|-------|------|
+| `feature-prompt-builder-quick` | Reads codebase, builds prompt from short description |
+| `feature-prompt-builder-spec` | Reads codebase, breaks spec into Parts, builds prompt |
+| `qa-checker` | Runs typecheck/build, scans for artifacts, returns PASS/FAIL report |
+| `pr-finalizer` | Updates CHANGELOG, opens PR with structured Hebrew description |
+
 ## Adding a new agent
 
 1. Create `agents/agent-name.md` with frontmatter
-2. Add a row to the Agents table in README.md
+2. Add a row to the Agents table in README.md and in CLAUDE.md
 3. Install locally: `cp agents/agent-name.md ~/.claude/agents/`
 
 ## Adding a new command

@@ -18,6 +18,8 @@ A collection of Claude Code skills, agents, and commands for building client pro
 |-------|-------------|
 | `feature-prompt-builder-quick` | Builds a prompt for a small feature described in plain text |
 | `feature-prompt-builder-spec` | Builds a prompt for a large feature with a full spec |
+| `qa-checker` | Runs QA checks: typecheck, build, console artifacts, accessibility, CHANGELOG |
+| `pr-finalizer` | Updates CHANGELOG, opens PR to main with structured description |
 
 ## Commands
 
@@ -25,6 +27,8 @@ A collection of Claude Code skills, agents, and commands for building client pro
 |---------|-------------|
 | `/quick-feature` | Invoke feature-prompt-builder-quick |
 | `/spec-feature` | Invoke feature-prompt-builder-spec |
+| `/qa` | Run QA checks before PR |
+| `/done` | Finalize and open PR to main |
 
 ## Stack
 
@@ -76,3 +80,26 @@ Or invoke individual skills directly:
 /legal-pages-israel
 /project-about-page
 ```
+
+## Full workflow
+
+### New project
+1. Prepare your full spec
+2. `/client-project-init`
+3. Send the generated prompt to Claude Code
+4. `/qa` — when done building
+5. `/done` — open PR
+
+### Existing project — small feature
+1. Open terminal in the client project folder
+2. `/quick-feature [describe the feature in plain text]`
+3. Send the generated prompt to Claude Code
+4. `/qa`
+5. `/done`
+
+### Existing project — large feature
+1. Prepare your spec
+2. `/spec-feature [paste spec]`
+3. Send the generated prompt to Claude Code
+4. `/qa`
+5. `/done`
