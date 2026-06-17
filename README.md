@@ -26,6 +26,7 @@ A collection of Claude Code skills, agents, and commands for building client pro
 | `pr-finalizer` | Updates CHANGELOG, opens PR to main with structured description |
 | `project-orienteer` | Scans existing project, produces context block for Claude Code |
 | `background-enforcer` | Enforces all skill conventions on changed files — fixes directly |
+| `logs-and-accessibility-checker` | Deep scan: log_event() coverage + Hebrew RTL + ARIA |
 
 ## Commands
 
@@ -39,6 +40,7 @@ A collection of Claude Code skills, agents, and commands for building client pro
 | `/enforce` | Enforce all skill conventions on changed files |
 | `/new-project-flow` | Full flow for new projects |
 | `/continue-project-flow` | Full flow for existing projects + new feature |
+| `/check-logs-a11y` | Deep logging + accessibility scan (run after /qa) |
 
 ## Stack
 
@@ -113,6 +115,6 @@ Done — PR opened automatically.
 [Claude Code builds]
 /enforce             → fix all conventions
 /qa                  → typecheck, build, artifacts check
-/check-logs-a11y     → deep logging + RTL scan  ⚠ agent not yet built
+/check-logs-a11y     → deep logging + RTL scan
 /done                → open PR
 ```
