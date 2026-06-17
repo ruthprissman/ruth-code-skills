@@ -20,6 +20,8 @@ A collection of Claude Code skills, agents, and commands for building client pro
 | `feature-prompt-builder-spec` | Builds a prompt for a large feature with a full spec |
 | `qa-checker` | Runs QA checks: typecheck, build, console artifacts, accessibility, CHANGELOG |
 | `pr-finalizer` | Updates CHANGELOG, opens PR to main with structured description |
+| `project-orienteer` | Scans existing project, produces context block for Claude Code |
+| `background-enforcer` | Enforces all skill conventions on changed files — fixes directly |
 
 ## Commands
 
@@ -29,6 +31,10 @@ A collection of Claude Code skills, agents, and commands for building client pro
 | `/spec-feature` | Invoke feature-prompt-builder-spec |
 | `/qa` | Run QA checks before PR |
 | `/done` | Finalize and open PR to main |
+| `/orient` | Scan project and produce context block |
+| `/enforce` | Enforce all skill conventions on changed files |
+| `/new-project-flow` | Full flow for new projects |
+| `/continue-project-flow` | Full flow for existing projects + new feature |
 
 ## Stack
 
@@ -83,23 +89,26 @@ Or invoke individual skills directly:
 
 ## Full workflow
 
-### New project
-1. Prepare your full spec
-2. `/client-project-init`
-3. Send the generated prompt to Claude Code
-4. `/qa` — when done building
-5. `/done` — open PR
+### New project — full flow
+```
+/new-project-flow
+[Claude Code builds]
+Done — PR opened automatically.
+```
 
-### Existing project — small feature
-1. Open terminal in the client project folder
-2. `/quick-feature [describe the feature in plain text]`
-3. Send the generated prompt to Claude Code
-4. `/qa`
-5. `/done`
+### Existing project — full flow
+```
+/continue-project-flow
+[Claude Code builds]
+Done — PR opened automatically.
+```
 
-### Existing project — large feature
-1. Prepare your spec
-2. `/spec-feature [paste spec]`
-3. Send the generated prompt to Claude Code
-4. `/qa`
-5. `/done`
+### Manual step-by-step (if you prefer control)
+```
+/orient              → get context block → paste into Claude Code prompt
+[Claude Code builds]
+/enforce             → fix all conventions
+/qa                  → typecheck, build, artifacts check
+/check-logs-a11y     → deep logging + RTL scan  ⚠ agent not yet built
+/done                → open PR
+```
